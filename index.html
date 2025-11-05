@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ova Un | NKolay Link ile Ödeme Demo</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo"><div class="logo-badge">OU</div><div>Ova Un • Ödeme Paneli</div></div>
+      <nav class="nav" id="nav">
+        <a href="#/dashboard">📊 Dashboard</a>
+        <a href="#/customers">👥 Müşteriler</a>
+        <a href="#/links/new">🔗 Link Oluştur</a>
+        <a href="#/payments">💳 Ödemeler</a>
+      </nav>
+      <div class="muted small" style="margin-top:10px">Demo • NKolay Sanal POS</div>
+    </aside>
+
+    <main class="content">
+      <div id="view">
+        <!-- JS yüklü değilse bile boş kalmasın diye basit bir fallback -->
+        <div class="toolbar">
+          <h2 style="margin:0">Dashboard</h2>
+          <a class="btn" href="#/links/new">🔗 Yeni Link</a>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Gelen Ödemeler</h3>
+          <table>
+            <thead><tr><th>Tarih</th><th>Müşteri</th><th>Tutar</th><th>Durum</th><th>TxnID</th></tr></thead>
+            <tbody>
+              <tr><td>03.11.2025 10:12</td><td><span class="muted">Bayi A Gıda</span></td><td>₺12.450</td><td><span class="pill ok">Onaylandı</span></td><td class="small muted">TST-90011</td></tr>
+              <tr><td>02.11.2025 16:08</td><td><span class="muted">Bayi B Unlu Mam.</span></td><td>₺11.250</td><td><span class="pill fail">Başarısız</span></td><td class="small muted">TST-90012</td></tr>
+              <tr><td>Bugün 13:02</td><td><span class="muted">Bayi C Fırıncılık</span></td><td>₺7.500</td><td><span class="pill wait">Bekliyor</span></td><td class="small muted">TST-90013</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Müşteri profil modalı -->
+  <div class="modal" id="modal">
+    <div class="sheet">
+      <div class="toolbar">
+        <h3 style="margin:0">Müşteri Profili</h3>
+        <button class="btn" id="modalCloseBtn" type="button">Kapat</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
